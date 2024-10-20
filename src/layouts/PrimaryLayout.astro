@@ -1,6 +1,8 @@
 ---
 import "../sass/layout/_index.scss";
 import "../sass/main.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const { title = "Hello World" } = Astro.props;
 ---
 
@@ -16,11 +18,16 @@ const { title = "Hello World" } = Astro.props;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" sizes="48x48" href="/favicon.ico" />
-    <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <div class="main-grid">
+      <Header />
+
+      <slot />
+
+      <Footer />
+    </div>
   </body>
 </html>
 

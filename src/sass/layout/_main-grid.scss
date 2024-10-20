@@ -20,7 +20,6 @@
 }
 
 @media (min-width: 650px) {
-
   .even-columns>* {
     grid-column: span var(--col-width);
   }
