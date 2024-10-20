@@ -1,0 +1,12 @@
+.container {
+  --max-width: 1240px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.content {
+  flex-grow: 1;
+  margin-block: var(--margin-block);
+}

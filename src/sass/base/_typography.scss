@@ -1,0 +1,22 @@
+:root {
+  --ff-primary: sans-serif;
+  --ff-body: var(--ff-primary);
+
+  --fw-small: 200;
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --fs-small: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+  --fs-p: clamp(1.2rem, 1.0739rem + 0.6304vw, 1.5625rem);
+  --fs-100: clamp(1.44rem, 1.2615rem + 0.8924vw, 1.9531rem);
+  --fs-200: clamp(1.728rem, 1.4799rem + 1.2407vw, 2.4414rem);
+  --fs-300: clamp(2.0736rem, 1.7334rem + 1.7011vw, 3.0518rem);
+  --fs-400: clamp(2.4883rem, 2.027rem + 2.3067vw, 3.8147rem);
+  --fs-500: clamp(2.986rem, 2.366rem + 3.0998vw, 4.7684rem);
+  --fs-600: clamp(3.5832rem, 2.7563rem + 4.1344vw, 5.9605rem);
+}
+
+body {
+  font-family: var(--ff-body), system-ui, sans-serif;
+}
