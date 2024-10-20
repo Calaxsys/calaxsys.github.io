@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "astro-purgecss": "^4.6.1",
-    "sass": "^1.80.1"
+    "astro-seo": "^0.8.4",
+    "sass": "^1.80.3"
   }
 }

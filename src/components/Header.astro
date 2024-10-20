@@ -1,0 +1,59 @@
+---
+
+---
+
+<header>
+  <a href="/" class="header-logo"
+    ><img
+      src="/src/svgs/logo_v1.svg"
+      alt="Parker Web Design Logo"
+      width="234"
+      height="64"
+      decoding="async"
+    /></a
+  >
+
+  <!-- Hamburger Menu -->
+  <!-- <button
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+    class="mobile-nav-toggle">
+    <span class="visually-hidden">Menu</span>
+  </button> -->
+  <!------>
+
+  <nav id="primary-navigation" class="primary-navigation" data-visible="false">
+    <ul role="list" class="nav-list">
+      <li class="nav-li"><a href="/">Home</a></li>
+      <li class="nav-li"><a href="">Company</a></li>
+      <li class="nav-li | nav-li-dropdown">
+        <a href="/portfolio/">Portfolio</a>
+      </li>
+      <li class="nav-li | nav-li-dropdown"><span>Our Services</span></li>
+      <li class="nav-li"><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <button><a href="/contact/">Get Started</a></button>
+</header>
+
+<style>
+  header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: var(--header-padding);
+  }
+
+  .primary-navigation {
+    color: white;
+  }
+
+  .nav-list {
+    display: flex;
+  }
+
+  .header-logo {
+    /* position: absolute; */
+  }
+</style>

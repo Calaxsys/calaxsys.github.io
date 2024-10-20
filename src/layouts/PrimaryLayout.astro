@@ -21,13 +21,14 @@ const { title = "Hello World" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="main-grid">
-      <Header />
+    <a href="#main" class="skip" aria-label="skip to main content"
+      >Click To Skip To Main Content</a
+    >
+    <Header />
 
-      <slot />
+    <slot />
 
-      <Footer />
-    </div>
+    <Footer />
   </body>
 </html>
 
@@ -35,5 +36,13 @@ const { title = "Hello World" } = Astro.props;
   body {
     /* Fallback background color */
     background-color: rgb(7, 7, 48);
+  }
+
+  .skip {
+    position: absolute;
+    z-index: -111111;
+    top: 0;
+    left: 0;
+    opacity: 0;
   }
 </style>

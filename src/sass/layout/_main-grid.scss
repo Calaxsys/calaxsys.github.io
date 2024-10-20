@@ -3,7 +3,7 @@
 
   display: grid;
   column-gap: 1rem;
-  grid-template-columns: minmax(1rem, 1fr) repeat(--column-count, minmax(0, 10rem)), minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) repeat(calc(var(--column-count)), minmax(0, 10rem)) minmax(1rem, 1fr);
 }
 
 .main-grid>* {
