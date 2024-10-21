@@ -1,22 +1,72 @@
 :root {
-  --ff-primary: sans-serif;
-  --ff-body: var(--ff-primary);
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+}
 
-  --fw-small: 200;
-  --fw-regular: 400;
-  --fw-semi-bold: 500;
-  --fw-bold: 700;
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/inter-v18-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
-  --fs-small: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
-  --fs-p: clamp(1.2rem, 1.0739rem + 0.6304vw, 1.5625rem);
-  --fs-100: clamp(1.44rem, 1.2615rem + 0.8924vw, 1.9531rem);
-  --fs-200: clamp(1.728rem, 1.4799rem + 1.2407vw, 2.4414rem);
-  --fs-300: clamp(2.0736rem, 1.7334rem + 1.7011vw, 3.0518rem);
-  --fs-400: clamp(2.4883rem, 2.027rem + 2.3067vw, 3.8147rem);
-  --fs-500: clamp(2.986rem, 2.366rem + 3.0998vw, 4.7684rem);
-  --fs-600: clamp(3.5832rem, 2.7563rem + 4.1344vw, 5.9605rem);
+/* epilogue-700 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/epilogue-v17-latin-700.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 body {
-  font-family: var(--ff-body), system-ui, sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--step-5);
+
+}
+
+h2 {
+  font-size: var(--step-4);
+
+}
+
+h3 {
+  font-size: var(--step-3);
+}
+
+h4 {
+  font-size: var(--step-2);
+}
+
+h5 {
+  font-size: var(--step-1);
+}
+
+small {
+  font-size: var(--step--1);
 }

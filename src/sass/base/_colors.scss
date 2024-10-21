@@ -1,16 +1,129 @@
-:root {
-  --clr-text-100: hsl(0, 0%, 96%);
-  --clr-text-400: hsl(0, 57.92%, 4.92%);
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-50: hsl(200, 12%, 95%);
+    --text-100: hsl(197, 14%, 90%);
+    --text-200: hsl(190, 12%, 80%);
+    --text-300: hsl(193, 12%, 70%);
+    --text-400: hsl(193, 12%, 60%);
+    --text-500: hsl(192, 12%, 50%);
+    --text-600: hsl(193, 12%, 40%);
+    --text-700: hsl(193, 12%, 30%);
+    --text-800: hsl(190, 12%, 20%);
+    --text-900: hsl(197, 14%, 10%);
+    --text-950: hsl(180, 12%, 5%);
 
-  --clr-primary-100: hsl(18, 100%, 50%);
-  --clr-primary-400: hsl(18, 100%, 63.6%);
+    --background-50: hsl(197, 28%, 95%);
+    --background-100: hsl(192, 29%, 90%);
+    --background-200: hsl(191, 27%, 80%);
+    --background-300: hsl(193, 28%, 70%);
+    --background-400: hsl(192, 28%, 60%);
+    --background-500: hsl(192, 28%, 50%);
+    --background-600: hsl(192, 28%, 40%);
+    --background-700: hsl(193, 28%, 30%);
+    --background-800: hsl(191, 27%, 20%);
+    --background-900: hsl(192, 29%, 10%);
+    --background-950: hsl(189, 28%, 5%);
 
-  --clr-secondary-100: hsl(216, 94%, 40%);
-  --clr-secondary-400: hsl(216, 94%, 26%);
+    --primary-50: hsl(189, 100%, 95%);
+    --primary-100: hsl(191, 100%, 90%);
+    --primary-200: hsl(190, 100%, 80%);
+    --primary-300: hsl(190, 100%, 70%);
+    --primary-400: hsl(190, 100%, 60%);
+    --primary-500: hsl(190, 100%, 50%);
+    --primary-600: hsl(190, 100%, 40%);
+    --primary-700: hsl(190, 100%, 30%);
+    --primary-800: hsl(190, 100%, 20%);
+    --primary-900: hsl(191, 100%, 10%);
+    --primary-950: hsl(192, 100%, 5%);
 
-  --clr-accent-100: hsl(37, 100%, 97%);
-  --clr-accent-400: hsla(33, 9%, 76%, 0.604);
-  --clr-accent-900: hsl(235, 17%, 15%);
+    --secondary-50: hsl(263, 92%, 95%);
+    --secondary-100: hsl(266, 92%, 90%);
+    --secondary-200: hsl(265, 90%, 80%);
+    --secondary-300: hsl(265, 91%, 70%);
+    --secondary-400: hsl(265, 91%, 60%);
+    --secondary-500: hsl(265, 91%, 50%);
+    --secondary-600: hsl(265, 91%, 40%);
+    --secondary-700: hsl(265, 91%, 30%);
+    --secondary-800: hsl(265, 90%, 20%);
+    --secondary-900: hsl(266, 92%, 10%);
+    --secondary-950: hsl(266, 92%, 5%);
 
-  --clr-neutral-100: hsl(36, 91%, 82%);
+    --accent-50: hsl(189, 77%, 95%);
+    --accent-100: hsl(190, 80%, 90%);
+    --accent-200: hsl(190, 80%, 80%);
+    --accent-300: hsl(190, 80%, 70%);
+    --accent-400: hsl(190, 80%, 60%);
+    --accent-500: hsl(190, 80%, 50%);
+    --accent-600: hsl(190, 80%, 40%);
+    --accent-700: hsl(190, 80%, 30%);
+    --accent-800: hsl(190, 80%, 20%);
+    --accent-900: hsl(190, 80%, 10%);
+    --accent-950: hsl(189, 77%, 5%);
+
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-50: hsl(180, 12%, 5%);
+    --text-100: hsl(197, 14%, 10%);
+    --text-200: hsl(190, 12%, 20%);
+    --text-300: hsl(193, 12%, 30%);
+    --text-400: hsl(193, 12%, 40%);
+    --text-500: hsl(192, 12%, 50%);
+    --text-600: hsl(193, 12%, 60%);
+    --text-700: hsl(193, 12%, 70%);
+    --text-800: hsl(190, 12%, 80%);
+    --text-900: hsl(197, 14%, 90%);
+    --text-950: hsl(200, 12%, 95%);
+
+    --background-50: hsl(189, 28%, 5%);
+    --background-100: hsl(193, 30%, 9%);
+    --background-200: hsl(191, 27%, 20%);
+    --background-300: hsl(193, 28%, 30%);
+    --background-400: hsl(192, 28%, 40%);
+    --background-500: hsl(192, 28%, 50%);
+    --background-600: hsl(192, 28%, 60%);
+    --background-700: hsl(193, 28%, 70%);
+    --background-800: hsl(191, 27%, 80%);
+    --background-900: hsl(192, 29%, 90%);
+    --background-950: hsl(197, 28%, 95%);
+
+    --primary-50: hsl(192, 100%, 5%);
+    --primary-100: hsl(191, 100%, 10%);
+    --primary-200: hsl(190, 100%, 20%);
+    --primary-300: hsl(190, 100%, 30%);
+    --primary-400: hsl(190, 100%, 40%);
+    --primary-500: hsl(190, 100%, 50%);
+    --primary-600: hsl(190, 100%, 60%);
+    --primary-700: hsl(190, 100%, 70%);
+    --primary-800: hsl(190, 100%, 80%);
+    --primary-900: hsl(191, 100%, 90%);
+    --primary-950: hsl(189, 100%, 95%);
+
+    --secondary-50: hsl(266, 92%, 5%);
+    --secondary-100: hsl(266, 92%, 10%);
+    --secondary-200: hsl(265, 90%, 20%);
+    --secondary-300: hsl(265, 91%, 30%);
+    --secondary-400: hsl(265, 91%, 40%);
+    --secondary-500: hsl(265, 91%, 50%);
+    --secondary-600: hsl(265, 91%, 60%);
+    --secondary-700: hsl(265, 91%, 70%);
+    --secondary-800: hsl(265, 90%, 80%);
+    --secondary-900: hsl(266, 92%, 90%);
+    --secondary-950: hsl(263, 92%, 95%);
+
+    --accent-50: hsl(189, 77%, 5%);
+    --accent-100: hsl(190, 80%, 10%);
+    --accent-200: hsl(190, 80%, 20%);
+    --accent-300: hsl(190, 80%, 30%);
+    --accent-400: hsl(190, 80%, 40%);
+    --accent-500: hsl(190, 80%, 50%);
+    --accent-600: hsl(190, 80%, 60%);
+    --accent-700: hsl(190, 80%, 70%);
+    --accent-800: hsl(190, 80%, 80%);
+    --accent-900: hsl(190, 80%, 90%);
+    --accent-950: hsl(189, 77%, 95%);
+
+  }
 }

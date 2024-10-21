@@ -3,7 +3,7 @@ import "../sass/layout/_index.scss";
 import "../sass/main.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-const { title = "Hello World" } = Astro.props;
+const { title = "Parker Web Design" } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,8 +34,9 @@ const { title = "Hello World" } = Astro.props;
 
 <style>
   body {
-    /* Fallback background color */
-    background-color: rgb(7, 7, 48);
+    /* Fallback / Base background color */
+    background-color: var(--background-100);
+    color: var(--text-900);
   }
 
   .skip {

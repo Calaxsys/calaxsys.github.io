@@ -24,17 +24,16 @@
 
   <nav id="primary-navigation" class="primary-navigation" data-visible="false">
     <ul role="list" class="nav-list">
-      <li class="nav-li"><a href="/">Home</a></li>
+      <li class="nav-li | nav-li-dropdown"><span>Our Services</span></li>
       <li class="nav-li"><a href="">Company</a></li>
-      <li class="nav-li | nav-li-dropdown">
+      <li class="nav-li">
         <a href="/portfolio/">Portfolio</a>
       </li>
-      <li class="nav-li | nav-li-dropdown"><span>Our Services</span></li>
       <li class="nav-li"><a href="/contact/">Contact</a></li>
     </ul>
   </nav>
 
-  <button><a href="/contact/">Get Started</a></button>
+  <a href="/contact/" class="header-cta">Get Started</a>
 </header>
 
 <style>
@@ -43,17 +42,22 @@
     display: flex;
     align-items: center;
     padding: var(--header-padding);
+    gap: 1rem;
+    margin-inline: 1rem;
+
+    display: none;
   }
 
   .primary-navigation {
-    color: white;
+    padding-left: 1rem;
+    flex: 1;
   }
 
   .nav-list {
     display: flex;
+    gap: 2.5rem;
   }
 
-  .header-logo {
-    /* position: absolute; */
+  .header-cta {
   }
 </style>
