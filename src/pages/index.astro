@@ -2,30 +2,43 @@
 import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 import Card from "../components/Card.astro";
 import Picture from "astro/components/Picture.astro";
+import test from "../images/test_graphic.png";
 ---
 
 <PrimaryLayout title="Web Design & Development For Small Business">
   <main>
     <section class="hero">
-      <div>
-        <span class="heading-topper">100% Hand Coded, Custom Designed</span>
-        <h1 class="page-title">
-          Professional Website Design for Small Business
-        </h1>
-        <p>
-          We provide fully hand-coded and customizable websites tailored to meet
-          all of your businesses needs.
-        </p>
+      <div class="content-container">
+        <div class="hero-content">
+          <span class="heading-topper">Hand Coded, Custom Designs</span>
+          <h1 class="section-title">
+            Professional Website Design for Small Business
+          </h1>
+          <p class="section-p">
+            We provide fully hand-coded and customizable websites tailored to
+            meet all of your businesses needs.
+          </p>
+          <div class="hero-btns">
+            <a href="/contact/" class="btn">Get Started</a>
+            <a href="/contact/" class="btn | btn-inverse">Our Work</a>
+          </div>
+        </div>
+        <Picture
+          alt="man with laptop in his hands"
+          src={test}
+          width="480"
+          height="640"
+          class="hero-photo"
+        />
       </div>
-      <!-- <Picture /> -->
     </section>
     <section class="how-can-we-help">
       <span class="heading-topper">What We Do</span>
       <h2>Website Management, Without the Stress</h2>
       <p>
-        Let us take care of your site while you grow your business. From design
-        and development to ongoing maintenance and updates, we ensure your site
-        stays in peak condition without you lifting a finger.
+        Let us take care of your website while you grow your business. From
+        design and development to ongoing maintenance and updates, we ensure
+        your site stays in peak condition without you lifting a finger.
       </p>
     </section>
     <section class="what-we-offer">
@@ -71,16 +84,59 @@ import Picture from "astro/components/Picture.astro";
       text-align: center;
     }
 
-    .page-title {
+    .section-title {
       letter-spacing: -1.5px;
       line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-p {
+      margin-bottom: var(--margin-block-end);
     }
 
     .heading-topper {
       margin-bottom: 0.75rem;
       display: block;
+      text-transform: uppercase;
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* align-items: center; */
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      /* justify-content: space-between; */
+
+      .btn {
+        line-height: 3rem;
+        padding: 0 2rem;
+        white-space: nowrap;
+      }
     }
   }
-  @media only screen and (min-width: 64rem) {
+  @media only screen and (min-width: 48rem) {
+    section {
+      text-align: left;
+    }
+    .content-container {
+      flex-direction: row;
+    }
+
+    .hero-content {
+      flex: none;
+      width: 40vw;
+      align-items: flex-start;
+    }
   }
 </style>
