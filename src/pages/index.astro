@@ -1,8 +1,8 @@
 ---
 import PrimaryLayout from "../layouts/PrimaryLayout.astro";
-import Card from "../components/Card.astro";
 import Picture from "astro/components/Picture.astro";
 import test from "../images/test_graphic.png";
+import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
 ---
 
 <PrimaryLayout title="Web Design & Development For Small Business">
@@ -35,13 +35,15 @@ import test from "../images/test_graphic.png";
       </div>
     </section>
     <section class="how-can-we-help">
-      <span class="heading-topper">What We Do</span>
-      <h2>Website Management, Without the Stress</h2>
-      <p>
-        Let us take care of your website while you grow your business. From
-        design and development to ongoing maintenance and updates, we ensure
-        your site stays in peak condition without you lifting a finger.
-      </p>
+      <div class="section-intro-container">
+        <span class="heading-topper">How Can We Help?</span>
+        <h2 class="subsection-title">Website Management, Without the Stress</h2>
+        <p class="section-p">
+          Let us take care of your website while you grow your business. From
+          design and development to ongoing maintenance and updates, we ensure
+          your site stays in peak condition without you lifting a finger.
+        </p>
+      </div>
       <ul class="cards-container" role="list">
         <li class="card">
           <h3>Fully Responsive Design</h3>
@@ -156,7 +158,24 @@ import test from "../images/test_graphic.png";
         examples of the websites we’ve designed and developed.
       </p>
       <ul class="portfolio-ul" role="list">
-        <li class="portfolio-li"></li>
+        <li class="portfolio-li">
+          <a href="https://www.ruthiesplayroom.com">
+            <Picture
+              alt="A Photo of the Ruthie's Playroom Website"
+              src={ruthies}
+              width="700"
+              height="700"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Ruthie's Playroom</h3>
+            <p>
+              Ruthie's Playroom is a children's playroom in Spencer, NC. They
+              hold a special place with us, as our very first client.
+            </p>
+            <span class="visit-website-btn">Vist Website</span>
+          </a>
+        </li>
       </ul>
     </section>
     <section class="reviews">
@@ -172,28 +191,37 @@ import test from "../images/test_graphic.png";
 </PrimaryLayout>
 
 <style>
+  /* Shared Styles */
   section {
     padding: var(--section-padding);
     width: 100%;
+    max-width: 75rem;
+    margin: auto;
   }
 
   @media only screen and (min-width: 0rem) {
-    section {
-      text-align: center;
-    }
-
-    /* -----------------
-     Begin Hero Section 
-     ------------------- */
-    .section-title {
-      letter-spacing: -1.5px;
-      line-height: 1.1;
-      text-transform: uppercase;
+    /* Shared Styles */
+    .subsection-title {
       margin-bottom: 1rem;
     }
 
     .section-p {
       margin-bottom: var(--margin-block-end);
+      font-size: var(--step--1);
+    }
+
+    /* -----------------
+     Begin Hero Section 
+     ------------------- */
+    .hero {
+      text-align: center;
+    }
+
+    .section-title {
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
     }
 
     .hero-p {
@@ -246,11 +274,32 @@ import test from "../images/test_graphic.png";
       }
     }
     /* -----------------
-     Begin What We Do Section 
+     Begin How Can We Help Section 
      ------------------- */
+    .section-intro-container {
+      max-width: 50vw;
+    }
+    .cards-container {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(calc(320px - 16px * 2), 1fr)
+      );
+
+      .card {
+        background-color: var(--background-50);
+        padding: 1.5rem;
+
+        h3 {
+          font-size: var(--step-2);
+          margin-block-end: 1rem;
+        }
+      }
+    }
   }
   @media only screen and (min-width: 48rem) {
-    section {
+    .hero {
       text-align: left;
     }
     /* -----------------
