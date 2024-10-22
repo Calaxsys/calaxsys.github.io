@@ -10,13 +10,15 @@ import test from "../images/test_graphic.png";
     <section class="hero">
       <div class="content-container">
         <div class="hero-content">
-          <span class="heading-topper">Hand Coded, Custom Designs</span>
+          <span class="heading-topper | hero-topper"
+            >Custom Designs | Code | Solutions</span
+          >
           <h1 class="section-title">
             Professional Website Design for Small Business
           </h1>
-          <p class="section-p">
+          <p class="section-p | hero-p">
             We provide fully hand-coded and customizable websites tailored to
-            meet all of your businesses needs.
+            meet all of your businesses needs starting at $150/mo.
           </p>
           <div class="hero-btns">
             <a href="/contact/" class="btn">Get Started</a>
@@ -40,6 +42,53 @@ import test from "../images/test_graphic.png";
         design and development to ongoing maintenance and updates, we ensure
         your site stays in peak condition without you lifting a finger.
       </p>
+      <ul class="cards-container" role="list">
+        <li class="card">
+          <h3>Fully Responsive Design</h3>
+          <p>
+            Imagine your website adapting flawlessly to every device, from
+            sprawling desktop monitors to compact smartphones. We craft an
+            immersive digital experience that captivates your audience,
+            regardless of how they choose to connect.
+          </p>
+        </li>
+        <li class="card">
+          <h3>SEO Optimization</h3>
+          <p>
+            Our SEO optimization strategies help your site rank higher in search
+            results, driving more traffic and potential customers to your
+            business.
+          </p>
+        </li>
+        <li class="card">
+          <h3>Mobile-First Development</h3>
+          <p>
+            We design and build your website with a mobile-centric approach,
+            ensuring an exceptional user experience across all devices.
+          </p>
+        </li>
+        <li class="card">
+          <h3>Optimized Page Speed</h3>
+          <p>
+            Don't let slow page speeds drive your visitors away. We ensure your
+            page loads in 1 second or less
+          </p>
+        </li>
+        <li class="card">
+          <h3>Ongoing Support</h3>
+          <p>
+            Our team provides continuous support and updates, ensuring that your
+            website stays secure, modern, and functional as your business grows.
+          </p>
+        </li>
+        <li class="card">
+          <h3>Content Management Systems</h3>
+          <p>
+            We build your site using CMS platforms, empowering you with
+            easy-to-use tools to manage your content and keep your site updated.
+          </p>
+        </li>
+      </ul>
     </section>
     <section class="what-we-offer">
       <span class="heading-topper">Discover our services</span>
@@ -51,6 +100,52 @@ import test from "../images/test_graphic.png";
         to succeed online.
       </p>
       <p>Here’s what we bring to the table:</p>
+      <ul role="list" class="our-sercices-ul">
+        <li class="services-li">
+          <h3>100 Pagespeed Scores</h3>
+          <p>
+            We deliver websites that achieve a perfect 100 in Google PageSpeed
+            for optimal performance and speed.
+          </p>
+        </li>
+        <li class="services-li">
+          <h3>Client-Centered Approach</h3>
+          <p>
+            We put your business goals first, adapting our strategies to align
+            with your vision and needs.
+          </p>
+        </li>
+        <li class="services-li">
+          <h3>24/7 Support</h3>
+          <p>
+            Reach out anytime—when you call or text, you're speaking directly
+            with me, the owner and developer, to ensure you get the expert help
+            you need.
+          </p>
+        </li>
+        <li class="services-li">
+          <h3>Money Back Guarantee</h3>
+          <p>
+            If you're not satisfied with any of the designs we create, we offer
+            a full refund, no questions asked.
+          </p>
+        </li>
+        <li class="services-li">
+          <h3>SEO Optimization</h3>
+          <p>
+            We incorporate best practices to improve your site's visibility on
+            search engines and drive more traffic.
+          </p>
+        </li>
+        <li class="services-li">
+          <h3>Multiple Payment Plans</h3>
+          <p>
+            We offer payment options that fit your budget, so you can get
+            started without financial strain.
+          </p>
+        </li>
+      </ul>
+      <a href="/contact/">Call Us Today!</a>
     </section>
     <section class="portfolio">
       <span class="heading-topper">Our Recent Work</span>
@@ -60,6 +155,9 @@ import test from "../images/test_graphic.png";
         commitment to quality, creativity, and satisfaction. Here are a few
         examples of the websites we’ve designed and developed.
       </p>
+      <ul class="portfolio-ul" role="list">
+        <li class="portfolio-li"></li>
+      </ul>
     </section>
     <section class="reviews">
       <span class="heading-topper">What Our Clients Are Saying</span>
@@ -84,6 +182,9 @@ import test from "../images/test_graphic.png";
       text-align: center;
     }
 
+    /* -----------------
+     Begin Hero Section 
+     ------------------- */
     .section-title {
       letter-spacing: -1.5px;
       line-height: 1.1;
@@ -93,6 +194,15 @@ import test from "../images/test_graphic.png";
 
     .section-p {
       margin-bottom: var(--margin-block-end);
+    }
+
+    .hero-p {
+      max-width: 45ch;
+    }
+
+    .hero-topper {
+      font-size: var(--step--2);
+      line-height: 1.1em;
     }
 
     .heading-topper {
@@ -105,38 +215,58 @@ import test from "../images/test_graphic.png";
       display: flex;
       justify-content: space-between;
       flex-direction: column;
+      gap: 3rem;
+      margin: auto;
+      max-width: 80rem;
     }
 
     .hero-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* align-items: center; */
     }
+
     .hero-btns {
       display: flex;
       gap: 1rem;
-      /* justify-content: space-between; */
 
       .btn {
         line-height: 3rem;
-        padding: 0 2rem;
+        padding: 0 2.75rem;
         white-space: nowrap;
+        background-color: var(--background-900);
+        color: var(--text-100);
+        font-weight: 700;
+        border-radius: 1.15rem;
+      }
+
+      .btn-inverse {
+        background-color: var(--primary-500);
+        padding: 0 1.5rem;
       }
     }
+    /* -----------------
+     Begin What We Do Section 
+     ------------------- */
   }
   @media only screen and (min-width: 48rem) {
     section {
       text-align: left;
     }
+    /* -----------------
+     Begin Hero Section 
+     ------------------- */
     .content-container {
       flex-direction: row;
     }
 
     .hero-content {
       flex: none;
-      width: 40vw;
+      width: 50vw;
       align-items: flex-start;
     }
+    /* -----------------
+     Begin What We Do Section 
+     ------------------- */
   }
 </style>
