@@ -41,7 +41,7 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
         <p class="section-p">
           Let us take care of your website while you grow your business. From
           design and development to ongoing maintenance and updates, we ensure
-          your site stays in peak condition without you lifting a finger.
+          your site stays in peak condition without you ever lifting a finger.
         </p>
       </div>
       <ul class="cards-container" role="list">
@@ -93,31 +93,35 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
       </ul>
     </section>
     <section class="what-we-offer">
-      <span class="heading-topper">Discover our services</span>
-      <h2>Comprehensive Web Design & Development Services</h2>
-      <p>
-        We specialize in creating custom websites that are built to grow your
-        business. Whether you’re just getting started or looking to refresh an
-        existing site, our services are designed to provide everything you need
-        to succeed online.
-      </p>
-      <p>Here’s what we bring to the table:</p>
-      <ul role="list" class="our-sercices-ul">
-        <li class="services-li">
+      <div class="section-intro-container">
+        <span class="heading-topper">Discover our services</span>
+        <h2 class="subsection-title">
+          Comprehensive Web Design & Development Services
+        </h2>
+        <p class="section-p">
+          We specialize in creating custom websites that are built to grow your
+          business. Whether you’re just getting started or looking to refresh an
+          existing site, our services are designed to provide everything you
+          need to succeed online.
+        </p>
+        <p class="section-p">Here’s what we bring to the table:</p>
+      </div>
+      <ul role="list" class="our-services-ul | cards-container">
+        <li class="card">
           <h3>100 Pagespeed Scores</h3>
           <p>
             We deliver websites that achieve a perfect 100 in Google PageSpeed
             for optimal performance and speed.
           </p>
         </li>
-        <li class="services-li">
+        <li class="card">
           <h3>Client-Centered Approach</h3>
           <p>
             We put your business goals first, adapting our strategies to align
             with your vision and needs.
           </p>
         </li>
-        <li class="services-li">
+        <li class="card">
           <h3>24/7 Support</h3>
           <p>
             Reach out anytime—when you call or text, you're speaking directly
@@ -125,21 +129,21 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
             you need.
           </p>
         </li>
-        <li class="services-li">
+        <li class="card">
           <h3>Money Back Guarantee</h3>
           <p>
             If you're not satisfied with any of the designs we create, we offer
             a full refund, no questions asked.
           </p>
         </li>
-        <li class="services-li">
+        <li class="card">
           <h3>SEO Optimization</h3>
           <p>
             We incorporate best practices to improve your site's visibility on
             search engines and drive more traffic.
           </p>
         </li>
-        <li class="services-li">
+        <li class="card">
           <h3>Multiple Payment Plans</h3>
           <p>
             We offer payment options that fit your budget, so you can get
@@ -147,7 +151,7 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
           </p>
         </li>
       </ul>
-      <a href="/contact/">Call Us Today!</a>
+      <a href="/contact/" class="btn__global">Call Us Today!</a>
     </section>
     <section class="portfolio">
       <span class="heading-topper">Our Recent Work</span>
@@ -195,8 +199,6 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
   section {
     padding: var(--section-padding);
     width: 100%;
-    max-width: 75rem;
-    margin: auto;
   }
 
   @media only screen and (min-width: 0rem) {
@@ -210,11 +212,44 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
       font-size: var(--step--1);
     }
 
+    .section-intro-container {
+      max-width: 55rem;
+    }
+
+    .cards-container {
+      --grid-gap: 2rem;
+
+      display: grid;
+      gap: var(--grid-gap);
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(calc(320px - 16px * 2), 1fr)
+      );
+      max-width: var(--max-width);
+      width: 100%;
+
+      .card {
+        background-color: var(--background-50);
+        padding: 1.5rem;
+
+        h3 {
+          font-size: var(--step-2);
+          margin-block-end: 1rem;
+        }
+
+        p {
+          text-align: left;
+        }
+      }
+    }
+
     /* -----------------
      Begin Hero Section 
      ------------------- */
     .hero {
       text-align: center;
+      max-width: var(--max-width);
+      margin: auto;
     }
 
     .section-title {
@@ -241,11 +276,10 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
 
     .content-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       flex-direction: column;
-      gap: 3rem;
+      gap: 2rem;
       margin: auto;
-      max-width: 80rem;
     }
 
     .hero-content {
@@ -276,28 +310,47 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
     /* -----------------
      Begin How Can We Help Section 
      ------------------- */
-    .section-intro-container {
-      max-width: 50vw;
+    .how-can-we-help {
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: var(--max-width);
+      margin: auto;
     }
-    .cards-container {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(calc(320px - 16px * 2), 1fr)
-      );
 
-      .card {
-        background-color: var(--background-50);
-        padding: 1.5rem;
+    /* -----------------
+     What We Offer Section 
+     ------------------- */
+    .what-we-offer {
+      padding-top: 0;
+      max-width: var(--max-width);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-        h3 {
-          font-size: var(--step-2);
-          margin-block-end: 1rem;
-        }
+      span,
+      h2,
+      p {
+        text-align: center;
+      }
+    }
+
+    .our-services-ul {
+      margin-block-end: 1.5rem;
+    }
+  }
+
+  /* SOLELY FOR ALIGNING BUTTON */
+  @media only screen and (min-width: 35rem) {
+    .what-we-offer {
+      .btn__global {
+        align-self: flex-end;
       }
     }
   }
+
   @media only screen and (min-width: 48rem) {
     .hero {
       text-align: left;
@@ -311,11 +364,21 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
 
     .hero-content {
       flex: none;
-      width: 50vw;
+      width: 60%;
       align-items: flex-start;
     }
+
     /* -----------------
-     Begin What We Do Section 
+     Begin What We Offer Section 
      ------------------- */
+    .what-we-offer {
+      align-items: flex-end;
+
+      h2,
+      p,
+      span {
+        text-align: right;
+      }
+    }
   }
 </style>
