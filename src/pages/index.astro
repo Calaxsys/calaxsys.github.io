@@ -154,14 +154,16 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
       <a href="/contact/" class="btn__global">Call Us Today!</a>
     </section>
     <section class="portfolio">
-      <span class="heading-topper">Our Recent Work</span>
-      <h2>Explore Our Portfolio</h2>
-      <p>
-        We take pride in the work we do for our clients. Each project reflects a
-        commitment to quality, creativity, and satisfaction. Here are a few
-        examples of the websites we’ve designed and developed.
-      </p>
-      <ul class="portfolio-ul" role="list">
+      <div class="section-intro-container">
+        <span class="heading-topper">Our Recent Work</span>
+        <h2 class="subsection-title">Explore Our Portfolio</h2>
+        <p class="section-p">
+          We take pride in the work we do for our clients. Each project reflects
+          a commitment to quality, creativity, and satisfaction. Here are a few
+          examples of the websites we’ve designed and developed.
+        </p>
+      </div>
+      <ul class="portfolio-ul | cards-container" role="list">
         <li class="portfolio-li">
           <a href="https://www.ruthiesplayroom.com">
             <Picture
@@ -171,13 +173,59 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
               height="700"
               loading="lazy"
               decoding="async"
+              class="portfolio-li-img"
             />
-            <h3>Ruthie's Playroom</h3>
-            <p>
-              Ruthie's Playroom is a children's playroom in Spencer, NC. They
-              hold a special place with us, as our very first client.
-            </p>
-            <span class="visit-website-btn">Vist Website</span>
+            <div class="portfolio-li-info">
+              <h3>Ruthie's Playroom</h3>
+              <p>
+                Ruthie's Playroom is a children's playroom in Spencer, NC. They
+                hold a special place with us, as our very first client.
+              </p>
+              <span class="visit-website-btn | btn__global">Vist Website</span>
+            </div>
+          </a>
+        </li>
+        <li class="portfolio-li">
+          <a href="https://www.ruthiesplayroom.com">
+            <Picture
+              alt="A Photo of the Ruthie's Playroom Website"
+              src={ruthies}
+              width="700"
+              height="700"
+              loading="lazy"
+              decoding="async"
+              class="portfolio-li-img"
+            />
+            <div class="portfolio-li-info">
+              <h3>Ruthie's Playroom</h3>
+              <p>
+                Ruthie's Playroom is a children's playroom in Spencer, NC. They
+                hold a special place with us, as our very first client.
+              </p><span class="visit-website-btn | btn__global"
+                >Vist Website</span
+              >
+            </div>
+          </a>
+        </li>
+        <li class="portfolio-li">
+          <a href="https://www.ruthiesplayroom.com">
+            <Picture
+              alt="A Photo of the Ruthie's Playroom Website"
+              src={ruthies}
+              width="700"
+              height="700"
+              loading="lazy"
+              decoding="async"
+              class="portfolio-li-img"
+            />
+            <div class="portfolio-li-info">
+              <h3>Ruthie's Playroom</h3>
+              <p>
+                Ruthie's Playroom is a children's playroom in Spencer, NC. They
+                hold a special place with us, as our very first client.
+              </p>
+              <span class="visit-website-btn | btn__global">Vist Website</span>
+            </div>
           </a>
         </li>
       </ul>
@@ -199,12 +247,20 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
   section {
     padding: var(--section-padding);
     width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
   }
 
   @media only screen and (min-width: 0rem) {
     /* Shared Styles */
     .subsection-title {
       margin-bottom: 1rem;
+    }
+
+    .heading-topper {
+      margin-bottom: 0.75rem;
+      display: block;
+      text-transform: uppercase;
     }
 
     .section-p {
@@ -266,12 +322,6 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
     .hero-topper {
       font-size: var(--step--2);
       line-height: 1.1em;
-    }
-
-    .heading-topper {
-      margin-bottom: 0.75rem;
-      display: block;
-      text-transform: uppercase;
     }
 
     .content-container {
@@ -340,6 +390,46 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
     .our-services-ul {
       margin-block-end: 1.5rem;
     }
+
+    /* -----------------
+     Portfolio Section 
+     ------------------- */
+    .portfolio {
+      padding-top: 0;
+
+      .section-intro-container {
+        margin-block-end: 1.5rem;
+      }
+    }
+    .portfolio-li {
+      background-color: var(--background-50);
+      border-radius: 1.15rem;
+    }
+
+    .portfolio-li-info {
+      padding: 2rem;
+      margin-top: -3rem;
+
+      h3,
+      p {
+        margin-block-end: 1rem;
+      }
+    }
+
+    .portfolio-li img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      margin-top: -2rem;
+    }
+
+    .visit-website-btn {
+      padding: 1rem 1.75rem;
+    }
+
+    /* -----------------
+     Reviews Section 
+     ------------------- */
   }
 
   /* SOLELY FOR ALIGNING BUTTON */
@@ -352,12 +442,13 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
   }
 
   @media only screen and (min-width: 48rem) {
-    .hero {
-      text-align: left;
-    }
     /* -----------------
      Begin Hero Section 
      ------------------- */
+    .hero {
+      text-align: left;
+    }
+
     .content-container {
       flex-direction: row;
     }
