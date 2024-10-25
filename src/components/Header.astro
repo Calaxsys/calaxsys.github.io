@@ -6,7 +6,7 @@ import companyLogo from "../../src/images/parker-logo/logo_v1.svg";
 <header class="header">
   <div class="header-container">
     <!--Logo is turned white in the css with a filter on dark mode-->
-    <a href="" aria-label="back to home">
+    <a href="" aria-label="back to home" class="logo">
       <Picture
         src={companyLogo}
         alt="Parker Crest Web Design Logo"
@@ -35,7 +35,6 @@ import companyLogo from "../../src/images/parker-logo/logo_v1.svg";
           <li>
             <a href=""> About </a>
           </li>
-          <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
           <li tabindex="0">
             <span> Services </span>
             <ul class="nav-dropdown">
@@ -51,27 +50,14 @@ import companyLogo from "../../src/images/parker-logo/logo_v1.svg";
             </ul>
           </li>
           <li>
-            <a href=""> Blog </a>
+            <a href="">Blog</a>
           </li>
           <li>
-            <a href=""> Contact </a>
+            <a href="">Contact</a>
           </li>
         </ul>
       </div>
     </nav>
-    <div>
-      <a href="tel:+1 980 565 5719" class="nav-phone">
-        <img
-          src="/src/svgs/phone-1a.svg"
-          alt="logo"
-          width="24"
-          height="24"
-          aria-hidden="true"
-          decoding="async"
-        />
-        +1 980 565 5719
-      </a>
-    </div>
 
     <button id="dark-mode-toggle" aria-label="dark mode toggle">
       <svg
@@ -97,30 +83,64 @@ import companyLogo from "../../src/images/parker-logo/logo_v1.svg";
 
 <style>
   .header {
-    display: flex;
+    background-color: #ef5757;
     width: 80%;
     max-width: var(--max-width);
-    margin-inline: auto;
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition:
+      top 0.2s,
+      border-radius 0.5s,
+      width 0.3s,
+      max-width 0.3s,
+      background-color 0.3s;
   }
 
   .nav-dropdown {
     display: none;
   }
 
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-  }
+  /* Desktop Navigation */
+  @media screen and (min-width: 62.5rem) {
+    .header {
+      border-radius: 1.25rem;
+      box-shadow: 1px 10px 20px 0px rgba(110, 115, 120, 0.23);
+      -webkit-box-shadow: 1px 10px 20px 0px rgba(110, 115, 120, 0.23);
+      -moz-box-shadow: 1px 10px 20px 0px rgba(110, 115, 120, 0.23);
+    }
 
-  .primary-nav-ul {
-    display: flex;
-    gap: 1.5rem;
-  }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1.25rem;
+      gap: 1rem;
+      max-width: var(--max-width);
+      margin-inline: auto;
+    }
 
-  .nav-phone {
-    display: flex;
-    gap: 1rem;
+    .primary-nav-ul {
+      display: flex;
+      gap: clamp(1.95rem, 3vw, 4.1rem);
+      justify-content: center;
+    }
+
+    .primary-navigation {
+      flex: 1;
+    }
+
+    /* Styling the transition for the header on body scroll */
+    body.scroll .header {
+      width: 100%;
+      max-width: 100%;
+      top: 0;
+      border-radius: 0;
+    }
   }
 </style>
+
+<script src="../scripts/header_scroll.js"></script>
+<script src="../scripts/dark-mode-toggle.js"></script>
