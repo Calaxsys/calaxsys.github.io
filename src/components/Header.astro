@@ -6,10 +6,10 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
 <header class="header">
   <div class="header-container">
     <!--Logo is turned white in the css with a filter on dark mode-->
-    <a href="" aria-label="back to home" class="logo">
+    <a href="/" aria-label="back to home" class="logo">
       <Picture
         src={companyLogo}
-        alt="Parker Crest Web Design Logo"
+        alt="Jultera Web Design Logo"
         width="234"
         height="64"
         aria-hidden="true"
@@ -24,10 +24,19 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
       id="primary-navigation"
       data-visible="false">
       <!--Mobile Nav Toggle-->
-      <!-- <button aria-label="mobile menu toggle">
-        <div aria-hidden="true"></div>
-      </button> -->
-      <div>
+      <button aria-label="mobile menu toggle" class="mobile-menu-toggle">
+        <div aria-hidden="true" class="hamburger-container">
+          <span aria-hidden="true" class="hamburger-line-top | hamburger-line"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="hamburger-line-middle | hamburger-line"></span>
+          <span
+            aria-hidden="true"
+            class="hamburger-line-bottom | hamburger-line"></span>
+        </div>
+      </button>
+      <div class="primary-nav-ul-wrapper">
         <ul aria-expanded="false" class="primary-nav-ul" role="list">
           <li>
             <a href=""> Home </a>
@@ -87,51 +96,176 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
 </header>
 
 <style>
-  .header {
-    background-color: var(--primary-100);
-    width: 80%;
-    max-width: var(--max-width);
-    position: fixed;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    transition:
-      top 0.2s,
-      border-radius 0.5s,
-      width 0.3s,
-      max-width 0.3s,
-      background-color 0.3s;
-  }
-
   .nav-dropdown {
     display: none;
   }
 
-  .color-mode-icon {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
+  /* Styling the transition for the header on body scroll */
+  body.scroll .header {
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    border-radius: 0;
+  }
+  body.scroll .header::before {
+    border-radius: 0;
   }
 
-  #dark-mode-toggle {
-    background-color: transparent;
-    border: transparent;
-
-    :hover {
-      cursor: pointer;
+  @media screen and (min-width: 0rem) {
+    body.dark-theme .header::before {
+      background-color: var(--primary-100);
     }
-  }
 
-  /* Desktop Navigation */
-  @media screen and (min-width: 62.5rem) {
     .header {
-      border-radius: 1.25rem;
+      background-color: var(--primary-100);
+      width: 80%;
+      padding: 1rem;
+      border-radius: 1.15rem;
+      max-width: var(--max-width);
+      position: fixed;
+      z-index: 1000;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      transition:
+        top 0.2s,
+        border-radius 0.5s,
+        width 0.3s,
+        max-width 0.3s,
+        background-color 0.3s;
+    }
+
+    .header::before {
+      content: "";
+      background: #fff;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: transform 0.4s ease-in-out;
+      opacity: 1;
+      border-radius: 1.15rem;
       box-shadow: 1px 10px 20px 0px rgba(110, 115, 120, 0.23);
       -webkit-box-shadow: 1px 10px 20px 0px rgba(110, 115, 120, 0.23);
       -moz-box-shadow: 1px 10px 20px 0px rgba(110, 115, 120, 0.23);
     }
 
+    /* Used to select the header::before only if the primary nav is open to extend width */
+    .header:has(.primary-navigation[data-visible="true"])::before {
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    /* Company Logo */
+    .logo {
+      width: 50%;
+      position: relative;
+    }
+
+    /* Dark/Light mode icon */
+    .color-mode-icon {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      background-color: transparent;
+      border: none;
+    }
+
+    #dark-mode-toggle {
+      background-color: transparent;
+      border: transparent;
+      cursor: pointer;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .primary-navigation {
+      order: 3;
+    }
+
+    .mobile-menu-toggle:hover {
+      cursor: pointer;
+    }
+
+    .primary-nav-ul-wrapper {
+      z-index: -1;
+      background-color: var(--primary-100);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      max-height: 90dvh;
+      padding-bottom: 2.5rem;
+      border-radius: 1.15rem;
+      transform: scaleY(0);
+      transition: transform 0.3s;
+      transition-delay: 0.115s;
+      transform-origin: top;
+      top: 5rem;
+    }
+
+    .primary-nav-ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      align-items: center;
+      width: 100%;
+      padding-top: 5rem;
+    }
+
+    .primary-navigation[data-visible="true"] .primary-nav-ul-wrapper {
+      transform: scaleY(1);
+    }
+
+    .primary-nav-ul > li {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* Hamburger Menu Styles and Animations */
+    .mobile-menu-toggle {
+      height: 3rem;
+      width: 3rem;
+      background-color: var(--primary-950);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: transparent;
+      position: relative;
+    }
+
+    .hamburger-container {
+      position: relative;
+      height: 1.5rem;
+      width: 1.75rem;
+    }
+
+    .hamburger-line {
+      position: absolute;
+      background-color: black;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      width: 100%;
+    }
+
+    .hamburger-line-top {
+      top: 0;
+    }
+    .hamburger-line-middle {
+      top: 50%;
+    }
+    .hamburger-line-bottom {
+      bottom: 0;
+    }
+  }
+
+  /* Desktop Navigation */
+  @media screen and (min-width: 62.5rem) {
     .header-container {
       display: flex;
       align-items: center;
@@ -152,16 +286,9 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
     .primary-navigation {
       flex: 1;
     }
-
-    /* Styling the transition for the header on body scroll */
-    body.scroll .header {
-      width: 100%;
-      max-width: 100%;
-      top: 0;
-      border-radius: 0;
-    }
   }
 </style>
 
 <script src="../scripts/header_scroll.js"></script>
+<script src="../scripts/display-nav.js"></script>
 <script src="../scripts/dark-mode-toggle.js"></script>
