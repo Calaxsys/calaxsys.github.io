@@ -16,13 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
       menuToggle.setAttribute("aria-expanded", "false");
       navUL.setAttribute("aria-expanded", "false");
     }
-
-    // nav.classList.toggle("open");
-
-    // if (nav.classList.contains("open")) {
-    //   body.style.overflow = "hidden";
-    // } else {
-    //   body.style.overflow = "";
-    // }
   })
 })
