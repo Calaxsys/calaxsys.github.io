@@ -44,23 +44,10 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
           <li>
             <a href=""> About </a>
           </li>
-          <li tabindex="0">
-            <span> Services </span>
-            <ul class="nav-dropdown">
-              <li>
-                <a href="">Web Design</a>
-              </li>
-              <li>
-                <a href="">Development</a>
-              </li>
-              <li>
-                <a href="">SEO Optimization</a>
-              </li>
-            </ul>
-          </li>
           <li>
-            <a href="">Blog</a>
+            <a href=""> Services </a>
           </li>
+
           <li>
             <a href="">Contact</a>
           </li>
@@ -96,10 +83,6 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
 </header>
 
 <style>
-  .nav-dropdown {
-    display: none;
-  }
-
   /* Styling the transition for the header on body scroll */
   body.scroll .header {
     width: 100%;
@@ -161,6 +144,8 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
     .logo {
       width: 50%;
       position: relative;
+      flex: 1;
+      /* max-width: 18rem; */
     }
 
     /* Dark/Light mode icon */
@@ -180,16 +165,18 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
 
     .header-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-
-    .primary-navigation {
-      order: 3;
+      gap: 1.5rem;
     }
 
     .mobile-menu-toggle:hover {
       cursor: pointer;
+    }
+
+    .primary-nav-ul > li {
+      text-transform: uppercase;
+      font-weight: 700;
+      height: 100%;
     }
 
     .primary-nav-ul-wrapper {
@@ -203,7 +190,7 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
       border-radius: 1.15rem;
       transform: scaleY(0);
       transition: transform 0.3s;
-      transition-delay: 0.115s;
+      transition-delay: 0.05s;
       transform-origin: top;
       top: 5rem;
     }
@@ -220,10 +207,8 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
     .primary-navigation[data-visible="true"] .primary-nav-ul-wrapper {
       transform: scaleY(1);
     }
-
-    .primary-nav-ul > li {
-      text-transform: uppercase;
-      font-weight: 700;
+    .primary-navigation {
+      order: 3;
     }
 
     /* Hamburger Menu Styles and Animations */
@@ -266,25 +251,67 @@ import companyLogo from "../../src/images/parker-logo/logo_v1_dark.svg";
 
   /* Desktop Navigation */
   @media screen and (min-width: 62.5rem) {
+    .header {
+      padding: 0;
+    }
+
     .header-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
       padding: 1.25rem;
-      gap: 1rem;
       max-width: var(--max-width);
       margin-inline: auto;
+    }
+
+    .header::before {
+      content: none;
     }
 
     .primary-nav-ul {
       display: flex;
       gap: clamp(1.95rem, 3vw, 4.1rem);
-      justify-content: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      height: 100%;
+      padding-top: 0;
+      align-items: center;
+      width: 100%;
+    }
+
+    .primary-nav-ul > li {
+      height: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .primary-nav-ul-wrapper {
+      width: unset;
+      position: absolute;
+      top: 50%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      border-radius: unset;
+      transition: unset;
     }
 
     .primary-navigation {
       flex: 1;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+    }
+
+    #dark-mode-toggle {
+      order: 3;
     }
   }
 </style>
