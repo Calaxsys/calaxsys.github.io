@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "astro": "^4.16.5",
-    "astro-icon": "^1.1.1",
     "purgecss": "^6.0.0"
   },
   "devDependencies": {
+    "astro-icon": "^1.1.1",
     "astro-purgecss": "^4.6.1",
     "astro-seo": "^0.8.4",
     "sass": "^1.80.3"
