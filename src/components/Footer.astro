@@ -2,25 +2,29 @@
 import Picture from "astro/components/Picture.astro";
 import { Icon } from "astro-icon/components";
 
-import footer_image from "../images/footer-img-2x.png";
+import footer_image from "../images/footer-img.png";
 import companyLogo from "../images/parker-logo/logo_v1_dark.svg";
 ---
 
 <footer class="footer">
   <p class="footer-title">
     Ready to get started? <br />
-    <span class="footer-subtitle">Let’s Build Something Great Together!</span>
+    <span class="footer-subtitle">Let’s Build Something Great.</span>
   </p>
-  <Picture
-    src={footer_image}
-    alt="A Beautiful Website built by Jultera Web Designs on a small Laptop Screen"
-    width="2160"
-    height="2160"
-    aria-hidden="true"
-    loading="lazy"
-    decoding="async"
-    class="footer-img-container"
-  />
+
+  <div class="footer-img-wrapper">
+    <Picture
+      src={footer_image}
+      alt="A Beautiful Website built by Jultera Web Designs on a small Laptop Screen"
+      width="1334"
+      height="1334"
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+      class="footer-img"
+    />
+  </div>
+
   <a href="/" class="btn | cta-btn">Kickstart your Business</a>
 
   <Picture
@@ -37,14 +41,14 @@ import companyLogo from "../images/parker-logo/logo_v1_dark.svg";
   <ul class="footer-socials" role="list">
     <li>
       <a href="/">
-        <!-- <Icon name="facebook" /> -->
+        <Icon name="facebook" />
       </a>
     </li>
     <li>
-      <!-- <a href="/"><Icon name="linkedin" /></a> -->
+      <a href="/"><Icon name="linkedin" /></a>
     </li>
     <li>
-      <!-- <a href="/"><Icon name="github" /></a> -->
+      <a href="/"><Icon name="github" /></a>
     </li>
   </ul>
   <div class="wave">
@@ -69,6 +73,13 @@ import companyLogo from "../images/parker-logo/logo_v1_dark.svg";
 </footer>
 
 <style>
+  .cta-btn {
+    background-color: var(--accent-400);
+    max-width: fit-content;
+    padding: 1rem 2.6rem;
+    border-radius: 4rem;
+    text-transform: uppercase;
+  }
   /* SVG on top of footer */
   .wave {
     position: absolute;
@@ -119,7 +130,7 @@ import companyLogo from "../images/parker-logo/logo_v1_dark.svg";
       font-size: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
     }
 
-    .footer-img-container {
+    .footer-img {
       width: 50%;
       height: 50%;
       object-fit: cover;
@@ -140,7 +151,7 @@ import companyLogo from "../images/parker-logo/logo_v1_dark.svg";
       text-align: center;
     }
 
-    .footer-img-container {
+    .footer-img {
       margin-inline: auto;
       border-radius: 100rem;
       height: 75%;
@@ -150,6 +161,7 @@ import companyLogo from "../images/parker-logo/logo_v1_dark.svg";
 
   @media screen and (min-width: 62.5rem) {
     .footer {
+      margin-top: 10rem;
       display: grid;
       align-items: flex-end;
 
@@ -167,14 +179,29 @@ import companyLogo from "../images/parker-logo/logo_v1_dark.svg";
 
   .footer-title {
     grid-column: 2 / -2;
+    grid-row: 1 / -1;
+    letter-spacing: 0.15rem;
+    margin-bottom: 2.5rem;
   }
 
-  .footer-img-container {
-    /* position: absolute; */
+  .footer-img-wrapper {
+    grid-column: 9 / -1;
+    position: relative;
+    grid-row: 1 / -1;
+  }
+
+  .footer-img {
+    height: 533px;
+    width: 533px;
+    border-radius: 20rem;
+    position: absolute;
+    top: -25rem;
+    z-index: 10;
   }
 
   .cta-btn {
     grid-column: 2 / -2;
+    margin-bottom: 8rem;
   }
 
   .footer picture:has(.footer-logo) {
