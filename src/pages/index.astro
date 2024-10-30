@@ -43,7 +43,7 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
         </p>
       </div>
       <ul class="cards-container" role="list">
-        <li class="card">
+        <li class="card | card-hover-effect">
           <h3>Fully Responsive Design</h3>
           <p>
             Imagine your website adapting flawlessly to every device, from
@@ -52,7 +52,7 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
             regardless of how they choose to connect.
           </p>
         </li>
-        <li class="card">
+        <li class="card | card-hover-effect">
           <h3>SEO Optimization</h3>
           <p>
             Our SEO optimization strategies help your site rank higher in search
@@ -60,28 +60,28 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
             business.
           </p>
         </li>
-        <li class="card">
+        <li class="card | card-hover-effect">
           <h3>Mobile-First Development</h3>
           <p>
             We design and build your website with a mobile-centric approach,
             ensuring an exceptional user experience across all devices.
           </p>
         </li>
-        <li class="card">
+        <li class="card | card-hover-effect">
           <h3>Optimized Page Speed</h3>
           <p>
             Don't let slow page speeds drive your visitors away. We ensure your
             page loads in 1 second or less
           </p>
         </li>
-        <li class="card">
+        <li class="card | card-hover-effect">
           <h3>Ongoing Support</h3>
           <p>
             Our team provides continuous support and updates, ensuring that your
             website stays secure, modern, and functional as your business grows.
           </p>
         </li>
-        <li class="card">
+        <li class="card | card-hover-effect">
           <h3>Content Management Systems</h3>
           <p>
             We build your site using CMS platforms, empowering you with
@@ -287,6 +287,9 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
       .card {
         background-color: var(--background-50);
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         h3 {
           font-size: var(--step-2);
@@ -484,6 +487,39 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
       flex: none;
       width: 60%;
       align-items: flex-start;
+    }
+    /* -----------------
+     Begin How can we help Section 
+     ------------------- */
+    .how-can-we-help .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.15rem;
+      transform: scale(1);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .how-can-we-help .card:hover {
+      transform: scale(1.05);
+    }
+
+    .how-can-we-help .card:before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-color: var(--primary-400);
+      top: 0;
+      right: 0;
+      transform: rotate(45deg) translate(-10%, -140%);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .how-can-we-help .card:hover:before {
+      transform: rotate(45deg) translate(1%, -80%);
+    }
+
+    .card-hover-effect {
     }
 
     /* -----------------
