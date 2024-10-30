@@ -149,7 +149,7 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
           </p>
         </li>
       </ul>
-      <a href="/contact/" class="btn__global">Call Us Today!</a>
+      <a href="/contact/" class="btn__global | cta-btn">Call Us Today!</a>
     </section>
     <section class="portfolio">
       <div class="section-intro-container">
@@ -353,9 +353,20 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
         border-radius: 1.15rem;
       }
 
+      .btn:hover {
+        background-color: var(--background-400);
+        color: var(--text-950);
+        transition: all 0.3s;
+      }
+
       .btn-inverse {
         background-color: var(--primary-500);
         padding: 0 1.5rem;
+      }
+
+      .btn-inverse:hover {
+        background-color: var(--primary-300);
+        transition: all 0.3s;
       }
     }
     /* -----------------
@@ -427,6 +438,12 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
       padding: 1rem 1.75rem;
     }
 
+    .visit-website-btn:hover {
+      background-color: var(--background-400);
+      color: var(--text-950);
+      transition: all 0.3s;
+    }
+
     /* -----------------
      Reviews Section 
      ------------------- */
@@ -440,6 +457,12 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
     .what-we-offer {
       .btn__global {
         align-self: flex-end;
+      }
+
+      .btn__global:hover {
+        background-color: var(--background-400);
+        color: var(--text-950);
+        transition: all 0.3s;
       }
     }
   }
