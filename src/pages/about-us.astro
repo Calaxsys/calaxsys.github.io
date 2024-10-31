@@ -1,0 +1,54 @@
+---
+import PrimaryLayout from "../layouts/PrimaryLayout.astro";
+---
+
+<PrimaryLayout>
+  <main>
+    <section class="page-title-section">
+      <h1>About Us</h1>
+    </section>
+    <section class="about-info-container">
+      <h2 class="subsection-title">
+        Helping Small Businesses Make
+        <span class="txt-clr-primary">Big</span> Impressions
+      </h2>
+      <p class="section-p">
+        My name is Chris Troublefield, and I am the owner and developer of
+        Parker Web Design. My passion for programming has always been strong,
+        but it truly ignited when I found out my son was on the way. I wanted a
+        career that would allow me to work from home and be present for all the
+        moments as my son grows up. I dedicated myself to learning web
+        development, spending years mastering the craft of building websites and
+        writing clean, hand-coded solutions.
+        <br />
+        <br />
+        At Parker Web Design, we prioritize helping businesses establish a powerful
+        online presence through custom web design and development. We work closely
+        with our clients to understand their unique needs and create websites that
+        not only look great but also drive results. Whether you're starting from
+        scratch or looking to revamp your existing site, we provide personalized
+        solutions that make your brand stand out.
+      </p>
+      <div>
+        <a href="contact.html" class="btn__global | contact-btn"
+          >Questions? Reach out today!</a
+        >
+      </div>
+    </section>
+  </main>
+</PrimaryLayout>
+
+<style>
+  section {
+    padding: var(--section-padding);
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+  }
+
+  .page-title-section {
+    padding-top: clamp(11.75rem, 12rem + 1vw, 13rem);
+    padding-bottom: 0;
+    text-align: center;
+  }
+</style>
