@@ -11,6 +11,7 @@
 // Push the main to be below the header
 main {
   margin-top: 9rem;
+  margin-bottom: min(15vw, 15rem);
 }
 
 .btn__global {

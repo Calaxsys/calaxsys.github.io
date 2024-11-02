@@ -2,12 +2,38 @@
 import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 ---
 
+<head>
+  <link rel="preload" as="image" href="../../images/photo-of-me-m.webp" />
+</head>
+
 <PrimaryLayout>
   <main>
     <section class="page-title-section">
       <h1>About Us</h1>
     </section>
     <section class="about-info-container">
+      <picture class="photo-container">
+        <!-- Mobile Image -->
+        <source
+          media="(max-width: 600px)"
+          srcset="../../images/photo-of-me-m.webp"
+        />
+        <!-- Desktop Image -->
+        <source
+          media="(min-width: 601px)"
+          srcset="../../images/photo-of-me-d.webp"
+        />
+        <!-- Fallback Image -->
+        <img
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          src="../../images/photo-of-me-d.webp"
+          alt="A photo of Chris, holding his son Parker, his dog and a laptop."
+          width="1000"
+          height="1333"
+        />
+      </picture>
       <div class="about-us-content">
         <h2 class="subsection-title">
           Helping Small Businesses Make
@@ -41,12 +67,46 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 </PrimaryLayout>
 
 <style>
+  @media screen and (max-width: 600px) {
+    .photo-container img {
+      height: 80%;
+      width: 80%;
+      margin-inline: auto;
+    }
+  }
+
+  @media screen and (min-width: 601px) {
+    .photo-container img {
+      height: 100%;
+      width: 100%;
+      max-height: 500px;
+    }
+
+    .about-info-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    .about-us-content {
+      max-width: 50%;
+    }
+  }
+
   section {
     padding: var(--section-padding);
     width: 100%;
     max-width: var(--max-width);
     margin: auto;
     margin-bottom: 3rem;
+  }
+
+  .photo-container img {
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border-radius: 2.5rem;
+    box-shadow: 15px 10px 0px -3px var(--background-800);
   }
 
   .page-title-section {
@@ -69,5 +129,11 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
     display: inline-block;
     padding: 0rem 2.5rem;
     line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    transition: all 0.24s ease-in-out;
+  }
+
+  .contact-btn:hover {
+    background-color: var(--primary-300);
+    color: var(--text-900);
   }
 </style>
