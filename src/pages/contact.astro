@@ -2,4 +2,111 @@
 import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 ---
 
-<PrimaryLayout />
+<PrimaryLayout>
+  <main>
+    <section class="page-title-section">
+      <h1><span class="txt-clr-primary">Contact</span> Us</h1>
+    </section>
+    <section>
+      <h2>Get In Touch</h2>
+      <p>
+        Send us an email with any questions you may have! We will be intouch
+        within 24 hours of receiving your message. Or you can call us to reach
+        us immediately, if we are unavailable leave us a message and we will
+        call you back as soon as possible.
+      </p>
+      <div>
+        <h3 class="footer-title">Give us a call!</h3>
+        <a href="tel:980-453-0103">(980) 453-0103</a>
+        <h3>Email</h3>
+        <a href="mailto:chris.troublefield99@gmail.com">Click to Email</a>
+      </div>
+      <div>
+        <form
+          action="/success/"
+          method="POST"
+          name="contact-form"
+          class="flex-form">
+          <h1 class="form-center-txt">Send Message</h1>
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
+          <div class="form-row">
+            <div class="input-group">
+              <!-- First Name -->
+              <label for="fname">First Name</label>
+              <input
+                type="text"
+                name="fname"
+                id="fname"
+                placeholder="First Name"
+                required
+              />
+            </div>
+            <!-- Last Name -->
+            <div class="input-group">
+              <label for="lname">Last Name</label>
+              <input
+                type="text"
+                name="lname"
+                id="lname"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <!-- Email -->
+              <label for="contact-email">Email</label>
+              <input
+                type="email"
+                name="contact-email"
+                id="contact-email"
+                placeholder="email@example.com"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <!-- Phone Number -->
+              <label for="phone-number">Phone</label>
+              <input
+                type="tel"
+                name="phone-number"
+                id="phone-number"
+                placeholder="123-456-7890"
+                pattern="^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Message -->
+          <label for="message">Leave us a message</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="8"
+            cols="40"
+            placeholder="Enter your message here..."
+            required></textarea>
+          <button type="submit" class="form-btn">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</PrimaryLayout>
+
+<style>
+  section {
+    padding: var(--section-padding);
+    padding-bottom: 0;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2rem;
+    max-width: max(34rem, 60%);
+  }
+</style>

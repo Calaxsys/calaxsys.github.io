@@ -54,9 +54,8 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
       </ul>
     </section>
     <section class="pitfalls">
-      <h3>The Page Builder Pitfalls</h3>
-
-      <ul role="list">
+      <h3>The Pitfalls of Page Builders</h3>
+      <ul class="pitfalls-ul">
         <li>
           <h4>Bloated Code:</h4>
           <p>Slows down your site and frustrates visitors</p>
@@ -75,8 +74,10 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
       <h3>Ready to Experience the Difference?</h3>
       <p>
         Don't settle for a cookie-cutter website that holds your business back.
-        Invest in a hand-built website that propels you forward. Get a Free
-        Consultation
+        Invest in a hand-built website that propels you forward.
+        <a href="/contact/" class="btn__global | btn"
+          >Learn More <span class="visually-hidden">about our services</span></a
+        >
       </p>
     </section>
   </main>
@@ -87,9 +88,9 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
     padding: var(--section-padding);
     padding-bottom: 0;
     width: 100%;
-    max-width: var(--max-width);
     margin: auto;
     margin-bottom: 2rem;
+    max-width: max(34rem, 60%);
   }
 
   p {
@@ -114,27 +115,54 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    margin-left: 2.5rem;
   }
 
   .services-ul li > * {
+    margin-left: 1rem;
+  }
+
+  .pitfalls h3 {
+    margin-bottom: 2rem;
+  }
+
+  .pitfalls-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-left: 1rem;
+  }
+
+  .pitfalls-ul li > * {
     max-width: 55ch;
     margin-left: 1rem;
   }
 
-  .pitfalls {
-    display: grid;
-    place-items: center;
-    justify-content: center;
-  }
-
-  .pitfalls ul {
+  .cta {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
-  .pitfalls h3 {
-    margin-bottom: 1rem;
+  @media screen and (width > 600px) {
+    .services-ul {
+      margin-left: 2.5rem;
+    }
+
+    .pitfalls-ul {
+      margin-left: 2.5rem;
+    }
+  }
+
+  .btn {
+    display: block;
+    margin-top: 2rem;
+    padding: 0rem 2.6rem;
+    border-radius: 4rem;
+  }
+
+  .btn:hover {
+    background-color: var(--primary-300);
+    color: var(--text-900);
+    transition: all 0.24s ease-in-out;
   }
 </style>
