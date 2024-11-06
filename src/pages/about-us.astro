@@ -73,6 +73,22 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
       width: 80%;
       margin-inline: auto;
     }
+
+    .photo-container::after {
+      width: 85%;
+      height: 105%;
+      position: absolute;
+      content: "";
+      background: linear-gradient(
+        153deg,
+        rgba(51, 221, 255, 1) 5%,
+        rgba(108, 11, 244, 1) 66%
+      );
+      z-index: -1;
+      border-radius: 2.5rem;
+      inset: 0;
+      margin: auto;
+    }
   }
 
   @media screen and (min-width: 601px) {
@@ -80,6 +96,22 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
       height: 100%;
       width: 100%;
       max-height: 500px;
+    }
+
+    .photo-container::after {
+      width: 95%;
+      height: 95%;
+      position: absolute;
+      content: "";
+      background: linear-gradient(
+        153deg,
+        rgba(51, 221, 255, 1) 5%,
+        rgba(108, 11, 244, 1) 66%
+      );
+      z-index: -1;
+      border-radius: 2.5rem;
+      right: -10px;
+      bottom: 15px;
     }
 
     .about-info-container {
@@ -107,7 +139,10 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
     object-fit: cover;
     margin-bottom: 2rem;
     border-radius: 2.5rem;
-    box-shadow: 15px 10px 0px -3px var(--background-800);
+  }
+
+  .photo-container {
+    position: relative;
   }
 
   .about-info-container {
@@ -117,6 +152,7 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 
     p {
       margin-bottom: 1.75rem;
+      font-size: var(--step--1);
     }
   }
 
