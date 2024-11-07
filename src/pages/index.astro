@@ -421,8 +421,32 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
       }
     }
     .portfolio-li {
-      background-color: var(--background-50);
+      background-color: var(--background-200);
       border-radius: 1.15rem;
+
+      transition: transform 0.2s ease-in-out;
+
+      position: relative;
+      overflow: hidden;
+      transform: scale(1);
+    }
+
+    .portfolio-li::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 4rem;
+      background-color: var(--secondary-600);
+      transform: translate(0, -100%);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .portfolio-li:hover::before {
+      transform: translate(0, -25%);
+    }
+
+    .portfolio-li:hover {
+      transform: scale(105%);
     }
 
     .portfolio-li-info {
@@ -436,9 +460,10 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
     }
 
     .portfolio-li img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
+      object-fit: contain;
+      width: 75%;
+      height: 75%;
+      margin: auto;
     }
 
     .visit-website-btn {
@@ -520,9 +545,6 @@ import ruthies from "../images/portfolio-mockups/ruthies-mockup-2x.png";
 
     .how-can-we-help .card:hover:before {
       transform: rotate(45deg) translate(1%, -80%);
-    }
-
-    .card-hover-effect {
     }
 
     /* -----------------
