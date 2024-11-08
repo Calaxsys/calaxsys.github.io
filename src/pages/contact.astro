@@ -53,7 +53,7 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
               </svg>
             </div>
             <div class="contact-flex-item">
-              <h3 class="contact-info-title">Email</h3>
+              <h3 class="contact-info-title">Email Us</h3>
               <a
                 href="mailto:chris.troublefield99@gmail.com"
                 class="contact-info-item">Click to Email</a
@@ -158,22 +158,29 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
   .contact-info p {
     margin-bottom: 1rem;
     max-width: 65ch;
-  }
-
-  .contact-info-title {
-    margin-bottom: 0.5rem;
+    line-height: 1.4;
   }
 
   .contact-info-item {
-    margin-bottom: 1rem;
     display: block;
+    padding-block: 1rem;
+    font-size: var(--step-0);
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+
+  .contact-info-item:hover {
+    color: var(--primary-400);
+  }
+
+  .contact-info-ul {
+    margin-top: 3rem;
   }
 
   .contact-info-ul li {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
     margin-bottom: 1rem;
+    position: relative;
+    margin-left: 4.5rem;
   }
 
   .contact-flex-item {
@@ -183,7 +190,8 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
   }
 
   .svg-wrapper {
-    position: relative;
+    position: absolute;
+    transform: translate(-5rem, -0.75rem);
   }
 
   .contact-info-ul .svg-wrapper > svg {
@@ -199,6 +207,15 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
     border: 1px solid white;
     inset: 0;
     margin: auto;
+    transition: all 0.1s;
+  }
+
+  li .svg-wrapper:hover::after {
+    border: 2px solid rgb(176, 168, 168);
+  }
+
+  li .svg-wrapper:hover {
+    color: rgb(176, 168, 168);
   }
 
   /* Form Styling */
@@ -250,6 +267,8 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
     max-width: 100%;
     display: block;
     padding: 0.5rem;
+    border: transparent;
+    border-radius: 0.5rem;
   }
 
   .form-btn {
@@ -259,12 +278,22 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
     border: transparent;
     background-color: var(--primary-200);
     color: var(--text-900);
+    transition: all 0.3s;
+  }
+
+  .form-btn:hover {
+    background-color: var(--primary-100);
+    cursor: pointer;
   }
 
   @media screen and (min-width: 601px) {
     .page-content {
       display: flex;
       gap: 2rem;
+    }
+
+    .contact-info-ul li {
+      margin-left: 5rem;
     }
   }
 </style>
