@@ -242,12 +242,19 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 
   .flex-form input {
     display: block;
-    padding: 0.5rem;
-    margin-block: 0.5rem;
+    padding: 1rem;
+    margin-block: 0.8rem;
     width: 100%;
     border: transparent;
     border-radius: 1rem;
     max-width: 80%;
+  }
+
+  .flex-form input:focus,
+  .flex-form textarea:focus {
+    background-color: var(--text-900);
+    color: var(--text-50);
+    outline: 2px solid blue;
   }
 
   .flex-form label {
@@ -273,7 +280,7 @@ import PrimaryLayout from "../layouts/PrimaryLayout.astro";
 
   .form-btn {
     margin: 1rem auto;
-    padding: 0.5rem 1.5rem;
+    padding: 1.5rem 4.5rem;
     border-radius: 1rem;
     border: transparent;
     background-color: var(--primary-200);
