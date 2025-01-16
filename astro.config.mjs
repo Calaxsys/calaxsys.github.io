@@ -6,5 +6,6 @@ import purgecss from 'astro-purgecss';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [icon(), purgecss()]
+  integrations: [icon(), purgecss()],
+  site: 'https://calaxsys.github.io'
 });
